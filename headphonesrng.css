@@ -1,0 +1,209 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        #game-container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #box {
+            width: 300px;
+            height: auto;
+            margin: auto;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        #box.spinning {
+            animation: spin-advanced 1.5s ease-in-out;
+        }
+
+        @keyframes spin-advanced {
+            0% { transform: scale(1) rotate(0deg); filter: hue-rotate(0deg); }
+            25% { transform: scale(1.3) rotate(90deg); filter: hue-rotate(90deg); }
+            75% { transform: scale(1.1) rotate(270deg); filter: hue-rotate(270deg); }
+            100% { transform: scale(1) rotate(360deg); filter: hue-rotate(360deg); }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+        }
+
+        button:disabled {
+            background: linear-gradient(45deg, #666, #555);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .merge-button {
+            background: linear-gradient(45deg, #9c27b0, #673ab7);
+        }
+
+        .mass-sell-button {
+            background: linear-gradient(45deg, #f44336, #e91e63);
+        }
+
+        .free-coins {
+            background: linear-gradient(45deg, #2196F3, #03a9f4);
+        }
+
+        #inventory {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .inventory-item {
+            background: linear-gradient(135deg, #2a2a2a, #333);
+            padding: 15px;
+            border-radius: 10px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .inventory-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .inventory-item.mergeable {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+        }
+
+        .sell-button {
+            background: linear-gradient(45deg, #ff4444, #cc0000);
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+
+        .sell-info {
+            font-size: 14px;
+            color: #ddd;
+            margin: 8px 0;
+        }
+
+        .rarity-common { 
+            background: linear-gradient(45deg, #ffffff, #e6e6e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rarity-uncommon { 
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rarity-rare { 
+            background: linear-gradient(45deg, #13f1fc, #0470dc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rarity-epic { 
+            background: linear-gradient(45deg, #c471f5, #fa71cd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rarity-legendary { 
+            background: linear-gradient(45deg, #f6d365, #fda085);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 2s linear infinite;
+        }
+        .rarity-exotic { 
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+            animation: rainbow 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes shine {
+            0% { filter: brightness(100%); }
+            50% { filter: brightness(150%); }
+            100% { filter: brightness(100%); }
+        }
+
+        #stats {
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #333, #444);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            background: linear-gradient(45deg, #333, #444);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .filter-button.active {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+        }
+
+        #merge-preview {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            z-index: 1000;
+        }
