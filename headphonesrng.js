@@ -143,12 +143,12 @@ function generatePattern(rarity, index) {
     const color = rarities[rarity].colors[index % rarities[rarity].colors.length];
     
     const svg = document.querySelector('#headphones');
-    svg.style.fill = color;
+    svg..fill = color;
     
     if (pattern.includes('gradient')) {
         const gradient = document.querySelector('#headphoneGradient');
         gradient.innerHTML = `
-            <stop offset="0%" style="stop-color:${color}"/>
+            <stop offset="0%" ="stop-color:${color}"/>
             <stop offset="100%" style="stop-color:${rarities[rarity].colors[(index + 1) % rarities[rarity].colors.length]}"/>
         `;
     }
