@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <htmlContent>
+        <![CDATA[
+        <div style="width:512px;height:448px">
+            <div id="game"></div>
+        </div>
+        <script>
+        EJS_player = '#game';				
+        EJS_gameUrl = 'https://cdn.jsdelivr.net/gh/Insanityyz/img@main/SNES/F-zero.zip'; // Url to Game rom
+        EJS_gameID = 815; 				// ID in your website, required for netplay.
+        EJS_gameName = "F-Zero";
+        EJS_color = "#FFA500";
+        EJS_core = 'snes';
+        EJS_pathtodata = "https://cdn.jsdelivr.net/gh/Insanityyz/img@main/EJS/";
+        EJS_mouse = false; 				// SNES mouse
+        EJS_multitap = false; 					// SNES Multitap
+        EJS_oldCores = true;
+        </script>
+        <script src="https://cdn.jsdelivr.net/gh/Insanityyz/img@main/EJS/loader.js"></script>
+        ]]>
+    </htmlContent>
+</root>
