@@ -1,0 +1,10 @@
+{
+  "name": "Mr Racer",
+  "description": "The Best Racing Game",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "MrRacer.html",
+    "default_icon": "Icon.png"
+  }
+}
